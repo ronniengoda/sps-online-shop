@@ -37,3 +37,42 @@ ALTER TABLE `tblproduct`
 ALTER TABLE `tblproduct`
   MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `order_number` varchar(20) NOT NULL,
+  `customer_name` varchar(200) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `delivery_address` text NOT NULL,
+  `items` longtext NOT NULL,
+  `total_amount` decimal(20,2) NOT NULL,
+  `order_status` varchar(200) NOT NULL DEFAULT 'Pending',
+  `payment_status` varchar(200) NOT NULL DEFAULT 'Pending',
+  `order_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
